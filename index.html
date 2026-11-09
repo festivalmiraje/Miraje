@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIRAJE – Festivalul Național Cultural, Cluj-Napoca</title>
+  <meta name="description" content="MIRAJE este un festival național cultural din Cluj-Napoca, fondat în 2008, care aduce împreună elevi cu și fără dizabilități prin teatru, muzică și dans. Talentul nu are limite.">
+
+  <!-- ACTUALIZARE LA LANSARE: șterge linia de mai jos ca site-ul să poată fi găsit în Google -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="theme-color" content="#c8161d">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+
+  <a class="sari-la-continut" href="#continut">Sari la conținut</a>
+
+  <header class="antet">
+    <div class="banda-cortina" aria-hidden="true"></div>
+    <div class="container antet__interior">
+      <a class="logo" href="index.html" aria-label="MIRAJE – Festival Cultural, pagina de acasă">
+        <img src="img/logo-miraje.png" alt="MIRAJE Festival Cultural" width="560" height="145">
+      </a>
+
+      <button class="nav-buton" id="nav-buton" type="button" aria-expanded="false" aria-controls="nav-principal">Meniu</button>
+
+      <nav class="nav" id="nav-principal" aria-label="Navigare principală">
+        <ul>
+          <li><a href="index.html" aria-current="page">Acasă</a></li>
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#componente">Componente</a></li>
+          <li><a href="parteneri.html">Parteneri</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav__accent" href="editii.html">Ediția 2026</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="continut">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" aria-labelledby="titlu-hero">
+      <div class="container hero__grila">
+        <div>
+          <p class="hero__suprat">Festivalul Național Cultural</p>
+          <h1 id="titlu-hero">MIRAJE</h1>
+          <p class="hero__slogan">Talentul nu are limite.</p>
+          <p class="hero__text">
+            Un festival din Cluj-Napoca care unește educația, cultura și incluziunea. Elevi cu și fără
+            dizabilități din școli din toată țara urcă împreună pe scenă, prin teatru, muzică și dans.
+          </p>
+          <div class="hero__butoane">
+            <a class="buton" href="#despre">Descoperă festivalul</a>
+            <a class="buton buton--contur" href="#editia-2026">Ediția 2026</a>
+          </div>
+        </div>
+
+        <!-- SPAȚIU LIBER (deocamdată gol). ACTUALIZARE: aici poate veni o fotografie de la ultima ediție.
+             Înlocuiește <div> cu: <img class="hero__vizual" src="img/hero.jpg" alt="descriere" width="900" height="900"> -->
+        <div class="hero__vizual" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ============================ CIFRE ============================ -->
+    <div class="container">
+      <ul class="cifre" aria-label="MIRAJE pe scurt">
+        <li><strong>2008</strong><span>anul înființării</span></li>
+        <li><strong>XVI</strong><span>ediția din 2026</span></li>
+        <li><strong>Național</strong><span>școli și trupe din toată țara</span></li>
+        <li><strong>Intrare liberă</strong><span>la majoritatea evenimentelor</span></li>
+      </ul>
+    </div>
+
+    <!-- ============================ DESPRE ============================ -->
+    <section class="sectiune" id="despre" aria-labelledby="titlu-despre">
+      <div class="container despre__grila">
+        <div>
+          <p class="supratitlu">Despre MIRAJE</p>
+          <h2 class="titlu-sectiune" id="titlu-despre">O comunitate construită în jurul artei</h2>
+          <p class="intro-sectiune">
+            MIRAJE este un eveniment dedicat elevilor cu și fără dizabilități, care promovează talentul,
+            empatia și bucuria de a crea împreună momente cu suflet.
+          </p>
+          <p>
+            Este și un proiect al comunității, deschis tuturor celor care cred că pot schimba felul în care
+            ne „privim” unii pe alții și felul în care înțelegem viața. Protagoniștii sunt chiar tinerii cu
+            dizabilități implicați în trupe de teatru, muzică și dans, alături de artiști consacrați invitați.
+          </p>
+          <blockquote class="citat">Talentul nu are limite.</blockquote>
+        </div>
+
+        <div>
+          <h3 class="doar-cititor">Scopul și misiunea festivalului</h3>
+          <ul class="misiune">
+            <li><strong>Integrare în comunitate</strong> a persoanelor cu dizabilități, prin intermediul artei.</li>
+            <li><strong>Schimbarea percepțiilor:</strong> nu doar momente artistice, ci conversații și mai multă înțelegere în jurul nostru.</li>
+            <li><strong>Educație non-formală:</strong> copiii și tinerii cu dizabilități se dezvoltă personal și social: încredere în sine, depășirea emoțiilor, exprimarea a ceea ce simt și gândesc.</li>
+            <li><strong>Dialog real</strong> între tineri cu și fără dizabilități, într-un spațiu comun de exprimare artistică.</li>
+            <li><strong>Acces egal la cultură</strong> pentru tinerii din România.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CE ÎL FACE DIFERIT ============================ -->
+    <section class="sectiune sectiune--cald" aria-labelledby="titlu-diferit">
+      <div class="container">
+        <p class="supratitlu">Ce îl face diferit</p>
+        <h2 class="titlu-sectiune" id="titlu-diferit">Un festival care se reinventează</h2>
+
+        <!-- Pe telefon, cardurile se derulează orizontal (js/site.js adaugă și butoanele). -->
+        <div class="carusel" data-carusel="Ce îl face diferit">
+          <div class="diferit">
+            <article>
+              <h3>Fiecare ediție e altfel</h3>
+              <p>Are identitatea, energia și surprizele ei. De fiecare dată apar alte povești, alte emoții, alte perspective.</p>
+            </article>
+            <article>
+              <h3>Scenă și experiență</h3>
+              <p>Spectacolul-concurs se îmbină cu activități interactive care pun publicul, pentru scurt timp, în locul persoanelor cu dizabilități.</p>
+            </article>
+            <article>
+              <h3>Cu adevărat național</h3>
+              <p>Participă trupe și școli din toată țara: instituții pentru persoane cu dizabilități, școli de masă și amatori de teatru, muzică și dans.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ COMPONENTE ============================ -->
+    <section class="sectiune" id="componente" aria-labelledby="titlu-componente">
+      <div class="container">
+        <p class="supratitlu">Componentele festivalului</p>
+        <h2 class="titlu-sectiune" id="titlu-componente">Șase moduri de a întâlni MIRAJE</h2>
+        <p class="intro-sectiune">De la scenă la întuneric complet, fiecare componentă te invită să privești altfel.</p>
+
+        <!-- ACTUALIZARE: când avem imagini, adaugă în fiecare <article class="card">, înaintea etichetei:
+             <img class="card__imagine" src="img/nume.jpg" alt="descriere" loading="lazy" width="800" height="500"> -->
+        <div class="carusel" data-carusel="Componentele festivalului">
+        <ul class="carduri">
+          <li>
+            <article class="card">
+              <span class="card__eticheta">Pe scenă</span>
+              <h3>Spectacolul-concurs MIRAJE</h3>
+              <p>Inima festivalului. Scena devine locul în care munca, emoția și energia copiilor se transformă în momente memorabile, la teatru, muzică și dans.</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__eticheta">Dialog</span>
+              <h3>Biblioteca Vie</h3>
+              <p>Activitate interactivă de dialog direct cu persoane cu dizabilități, pentru elevi și cadre didactice.</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__eticheta">Experiență</span>
+              <h3>Labirintul senzorial</h3>
+              <p>Activitate experiențială care apropie publicul de modul în care persoanele cu dizabilități percep lumea.</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__eticheta">Experiență</span>
+              <h3>Cafeneaua pe întuneric</h3>
+              <p>Participanții sunt serviți în întuneric complet, pentru a înțelege direct cum este viața fără vedere.</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__eticheta">Creație</span>
+              <h3>Atelierele MIRAJE</h3>
+              <p>Ateliere creative de teatru, muzică și modelaj în lut, la care participarea se face pe bază de invitație.</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <span class="card__eticheta">Artă vizuală</span>
+              <h3>Carte poștală – Teatrul prin ochii copiilor</h3>
+              <p>Expoziție de arte plastice cu lucrări participante la Concursul Național de Arte Plastice, ediția a V-a.</p>
+            </article>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ EDIȚIA 2026 ============================ -->
+    <!-- ACTUALIZARE: la fiecare ediție nouă, înlocuiește titlul, datele și lista de mai jos.
+         Ediția anterioară se mută pe pagina „Ediții” (de creat). -->
+    <section class="sectiune sectiune--cald" id="editia-2026" aria-labelledby="titlu-editie">
+      <div class="container">
+        <p class="supratitlu">Ultima ediție</p>
+        <h2 class="titlu-sectiune" id="titlu-editie">Ediția a XVI-a, 15–25 mai 2026</h2>
+        <p class="intro-sectiune">Cluj-Napoca, zece zile de întâlniri, spectacole și experiențe. Cea mai mare parte a evenimentelor a avut intrare liberă.</p>
+
+        <ol class="program">
+          <li>
+            <div class="program__data"><strong>15</strong><span>mai</span></div>
+            <div>
+              <h3>Biblioteca Vie</h3>
+              <p class="program__detalii"><b>12.00 – 14.00</b> · Biblioteca Județeană „Octavian Goga”</p>
+              <p>Pentru elevi și profesori de la Liceul Teoretic „Nicolae Bălcescu”, Liceul Teoretic „Onisifor Ghibu” și Liceul Special pentru Deficienți de Vedere.</p>
+            </div>
+          </li>
+          <li>
+            <div class="program__data"><strong>18</strong><span>mai</span></div>
+            <div>
+              <h3>Labirintul senzorial</h3>
+              <p class="program__detalii"><b>10.00 – 13.00</b> · Liceul Special pentru Deficienți de Vedere</p>
+              <p>Eveniment dedicat Facultății de Psihologie și Științe ale Educației.</p>
+            </div>
+          </li>
+          <li>
+            <div class="program__data"><strong>20–21</strong><span>mai</span></div>
+            <div>
+              <h3>Spectacol-concurs MIRAJE</h3>
+              <p class="program__detalii"><b>Ora 15.00</b> · Auditorium Maximum, str. M. Kogălniceanu nr. 5 · Intrare liberă</p>
+              <p>Teatru, muzică și dans, cu trupe din toată țara și invitați speciali.</p>
+            </div>
+          </li>
+          <li>
+            <div class="program__data"><strong>22</strong><span>mai</span></div>
+            <div>
+              <h3>Atelierele MIRAJE</h3>
+              <p class="program__detalii"><b>10.00 – 13.00</b> · Muzeul Etnografic al Transilvaniei · Pe bază de invitație</p>
+              <p>Teatru, muzică și modelaj în lut.</p>
+            </div>
+          </li>
+          <li>
+            <div class="program__data"><strong>25</strong><span>mai</span></div>
+            <div>
+              <h3>Cafeneaua pe întuneric</h3>
+              <p class="program__detalii"><b>16.00 – 18.00</b> · Syndicate Bar, DoubleTree by Hilton Cluj – City Plaza · Intrare liberă</p>
+              <p>O după-amiază în întuneric complet, în care vezi cu totul altfel.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="nota-editie">
+          <p>Ediția următoare: detalii în curând.</p>
+          <a class="buton buton--contur" href="editii.html">Program complet și arhivă</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ORGANIZATORI ============================ -->
+    <section class="sectiune" aria-labelledby="titlu-organizatori">
+      <div class="container">
+        <p class="supratitlu">Organizatori și parteneri</p>
+        <h2 class="titlu-sectiune" id="titlu-organizatori">Un proiect făcut împreună</h2>
+
+        <ul class="organizatori">
+          <li><small>Organizator</small>Liceul Special pentru Deficienți de Vedere Cluj-Napoca</li>
+          <li><small>Organizator</small>Asociația Culturală Miraje</li>
+          <li><small>Organizator</small>Asociația Lions Club Genesis</li>
+        </ul>
+
+        <p class="parteneri-lista">
+          <strong>Parteneri principali:</strong> Inspectoratul Școlar Județean Cluj · Universitatea Babeș-Bolyai,
+          Specializarea Psihopedagogie Specială · UBB, Centrul pentru Studenți cu Dizabilități.
+        </p>
+        <p><a href="parteneri.html">Vezi toți partenerii și sponsorii</a></p>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <!-- ACTUALIZARE: înlocuiește datele de contact generice de mai jos (și din subsol) cu cele reale. -->
+    <section class="sectiune sectiune--cald" id="contact" aria-labelledby="titlu-contact">
+      <div class="container contact">
+        <div>
+          <p class="supratitlu">Contact</p>
+          <h2 class="titlu-sectiune" id="titlu-contact">Hai să vorbim</h2>
+          <p class="intro-sectiune">Pentru întrebări, colaborări sau informații despre următoarea ediție, ne poți scrie sau suna.</p>
+          <p><a class="buton" href="contact.html">Pagina de contact</a></p>
+        </div>
+
+        <dl class="date-contact">
+          <div><dt>E-mail</dt><dd><a href="mailto:contact@exemplu.ro">contact@exemplu.ro</a></dd></div>
+          <div><dt>Telefon</dt><dd>+40 XXX XXX XXX</dd></div>
+          <div><dt>Adresă</dt><dd>Cluj-Napoca, strada Exemplu nr. X</dd></div>
+          <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/FestivalulMiraje/" rel="noopener">facebook.com/FestivalulMiraje</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="subsol">
+    <div class="banda-cortina" aria-hidden="true"></div>
+    <div class="container subsol__interior">
+      <div>
+        <h2>MIRAJE</h2>
+        <p>Festivalul Național Cultural · Cluj-Napoca</p>
+        <p>
+          <a href="https://www.facebook.com/FestivalulMiraje/" rel="noopener">Facebook</a> ·
+          <a href="mailto:contact@exemplu.ro">contact@exemplu.ro</a>
+        </p>
+      </div>
+      <nav aria-label="Navigare subsol">
+        <ul class="subsol__nav">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#componente">Componente</a></li>
+          <li><a href="#editia-2026">Ediția 2026</a></li>
+          <li><a href="editii.html">Ediții</a></li>
+          <li><a href="parteneri.html">Parteneri</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container subsol__mentiune">
+      <p>
+        Festivalul național cultural Miraje este înscris în Calendarul proiectelor de educație extrașcolară
+        naționale, fără finanțare din partea Ministerului Educației și Cercetării, Anexa nr. 2 la OMEC
+        nr. 3.197/10.02.2026, poziția 38.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+</html>
