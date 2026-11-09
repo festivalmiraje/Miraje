@@ -1,0 +1,783 @@
+/* ==========================================================================
+   MIRAJE – Festivalul Național Cultural
+   Stiluri principale. Fundal alb, accente roșu și negru.
+   Toate culorile și dimensiunile principale sunt variabile în :root.
+   ========================================================================== */
+
+:root {
+  /* Culori (roșul de text e ales să treacă WCAG AA pe alb) */
+  --rosu: #c8161d;          /* butoane, accente mari */
+  --rosu-inchis: #9e1016;   /* hover, text roșu mic */
+  --rosu-logo: #dc2127;     /* doar decor (rombul) */
+  --negru: #141414;
+  --text: #262626;
+  --text-slab: #595959;     /* text secundar, contrast 7:1 pe alb */
+  --linie: #e6e1e1;
+  --fond-cald: #faf6f5;     /* fundal foarte discret pentru secțiuni alternate */
+  --alb: #ffffff;
+
+  /* Tipografie (fonturi de sistem; se pot înlocui ulterior cu fonturi proprii) */
+  --font-titlu: "Palatino Linotype", "Book Antiqua", Palatino, "Iowan Old Style", Georgia, serif;
+  --font-corp: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --latime: 1160px;
+  --raza: 6px;
+}
+
+/* ---------- Bază ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(200, 22, 29, .15);
+}
+
+body {
+  margin: 0;
+  background: var(--alb);
+  color: var(--text);
+  font-family: var(--font-corp);
+  font-size: 1.125rem;   /* 18px: confortabil la citit */
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--font-titlu);
+  font-weight: 600;
+  color: var(--negru);
+  line-height: 1.15;
+  margin: 0 0 .6em;
+}
+
+p { margin: 0 0 1em; }
+
+a { color: var(--rosu-inchis); text-underline-offset: .18em; }
+a:hover { color: var(--rosu); }
+
+/* Focus vizibil pentru navigarea cu tastatura */
+:focus-visible {
+  outline: 3px solid var(--negru);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.sari-la-continut {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--negru);
+  color: var(--alb);
+  padding: .7rem 1.1rem;
+  z-index: 100;
+  border-radius: var(--raza);
+  text-decoration: none;
+}
+.sari-la-continut:focus { top: 1rem; color: var(--alb); }
+
+.container {
+  width: 100%;
+  max-width: var(--latime);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Text vizibil doar pentru cititoare de ecran */
+.doar-cititor {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Bandă cortină (decor discret) ---------- */
+.banda-cortina {
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--rosu-inchis) 0 14px,
+    var(--rosu) 14px 28px,
+    var(--rosu-logo) 28px 42px,
+    var(--rosu) 42px 56px
+  );
+}
+
+/* ---------- Antet ---------- */
+.antet {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .97);
+  border-bottom: 1px solid var(--linie);
+}
+
+.antet__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.5rem;
+}
+
+.logo { display: block; line-height: 0; padding-block: .45rem; }   /* zonă de atingere ≥ 44px */
+.logo img { height: 2.6rem; width: auto; }
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: .25rem;
+}
+
+.nav a {
+  display: block;
+  padding: .55rem .85rem;
+  color: var(--negru);
+  text-decoration: none;
+  font-size: .98rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--rosu-inchis); border-bottom-color: var(--rosu); }
+.nav a[aria-current="page"] { border-bottom-color: var(--rosu); }
+
+/* „Ediția 2026”: evidențiat ca buton în meniu */
+.nav a.nav__accent {
+  margin-left: .4rem;
+  padding: .5rem 1.2rem;
+  background: var(--rosu);
+  color: var(--alb);
+  font-weight: 700;
+  border: 2px solid var(--rosu);
+  border-radius: 99px;
+}
+.nav a.nav__accent:hover { background: var(--rosu-inchis); border-color: var(--rosu-inchis); color: var(--alb); }
+.nav a.nav__accent[aria-current="page"] { box-shadow: 0 0 0 2px var(--alb), 0 0 0 4px var(--rosu); }
+
+.nav-buton {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--negru);
+  color: var(--negru);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 44px;           /* zonă de atingere recomandată */
+  min-width: 5.5rem;
+  padding: .45rem 1rem;
+  border-radius: var(--raza);
+  cursor: pointer;
+}
+
+/* Meniu restrâns pe ecrane mici (doar dacă JavaScript e activ) */
+@media (max-width: 860px) {
+  .js .nav-buton { display: inline-block; }
+  .js .nav {
+    display: none;
+    position: absolute;
+    left: 0; right: 0; top: 100%;
+    background: var(--alb);
+    border-bottom: 1px solid var(--linie);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, .12);
+    padding: .25rem 1.25rem 1.25rem;
+    max-height: calc(100vh - 5rem);      /* meniul poate fi derulat pe ecrane scurte */
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .js .nav.deschis { display: block; }
+  .js .nav ul { flex-direction: column; gap: 0; }
+  .js .nav a {
+    padding: 1rem 0;                     /* ~56px înălțime: ușor de atins */
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--linie);
+  }
+  .js .nav a.nav__accent {
+    display: block;
+    margin: 1rem 0 0;
+    padding: .9rem 1.4rem;
+    text-align: center;
+    border: 2px solid var(--rosu);
+  }
+
+  /* Fără JavaScript: meniul se așază sub logo */
+  .antet__interior { flex-wrap: wrap; padding-block: .6rem; }
+  .nav ul { flex-wrap: wrap; }
+}
+
+/* ---------- Butoane ---------- */
+.buton {
+  display: inline-block;
+  padding: .85rem 1.6rem;
+  border-radius: var(--raza);
+  border: 2px solid var(--rosu);
+  background: var(--rosu);
+  color: var(--alb);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.buton:hover { background: var(--rosu-inchis); border-color: var(--rosu-inchis); color: var(--alb); }
+
+.buton--contur { background: transparent; color: var(--rosu-inchis); }
+.buton--contur:hover { background: var(--rosu); color: var(--alb); border-color: var(--rosu); }
+
+/* ---------- Secțiuni ---------- */
+.sectiune { padding-block: 4.5rem; }
+.sectiune--cald { background: var(--fond-cald); }
+
+.supratitlu {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 0 0 .8rem;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--rosu-inchis);
+}
+.supratitlu::before {   /* mic romb, ecou al siglei */
+  content: "";
+  width: .6rem; height: .6rem;
+  background: var(--rosu);
+  transform: rotate(45deg);
+  flex: none;
+}
+
+.titlu-sectiune {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  max-width: 24ch;
+}
+
+.intro-sectiune {
+  max-width: 62ch;
+  color: var(--text-slab);
+  font-size: 1.2rem;
+}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: 4rem 4.5rem; }
+
+.hero__grila {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__suprat {
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--rosu-inchis);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(3.4rem, 9vw, 6.4rem);
+  letter-spacing: .14em;
+  font-weight: 500;
+  margin-bottom: .15em;
+}
+
+.hero__slogan {
+  font-family: var(--font-titlu);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--rosu-inchis);
+  margin-bottom: 1.2rem;
+}
+
+.hero__text { max-width: 54ch; font-size: 1.2rem; }
+
+.hero__butoane { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+
+/* Spațiu liber rezervat pentru o fotografie viitoare (momentan gol) */
+.hero__vizual {
+  min-height: 22rem;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ---------- Cifre ---------- */
+.cifre {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-block: 1px solid var(--linie);
+}
+.cifre li {
+  padding: 1.8rem 1.25rem;
+  border-right: 1px solid var(--linie);
+  text-align: center;
+}
+.cifre li:last-child { border-right: 0; }
+.cifre strong {
+  display: block;
+  font-family: var(--font-titlu);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--rosu-inchis);
+  line-height: 1.1;
+}
+.cifre span { font-size: .98rem; color: var(--text-slab); }
+
+/* ---------- Despre ---------- */
+.despre__grila {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.misiune { list-style: none; margin: 0; padding: 0; }
+.misiune li {
+  position: relative;
+  padding: 1.1rem 0 1.1rem 2.2rem;
+  border-bottom: 1px solid var(--linie);
+}
+.misiune li:first-child { border-top: 1px solid var(--linie); }
+.misiune li::before {
+  content: "";
+  position: absolute;
+  left: .35rem; top: 1.75rem;
+  width: .65rem; height: .65rem;
+  background: var(--rosu);
+  transform: rotate(45deg);
+}
+.misiune strong { color: var(--negru); }
+
+.citat {
+  margin: 2.2rem 0 0;
+  padding: 1.4rem 1.6rem;
+  border-left: 4px solid var(--rosu);
+  background: var(--fond-cald);
+  font-family: var(--font-titlu);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--negru);
+}
+
+/* ---------- Ce îl face diferit ---------- */
+.diferit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.diferit article {
+  padding: 1.6rem;
+  background: var(--alb);
+  border: 1px solid var(--linie);
+  border-top: 3px solid var(--rosu);
+  border-radius: var(--raza);
+}
+.diferit h3 { font-size: 1.3rem; }
+.diferit p { margin: 0; color: var(--text-slab); }
+
+/* ---------- Componente ---------- */
+.carduri {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.7rem;
+  background: var(--alb);
+  border: 1px solid var(--linie);
+  border-radius: var(--raza);
+  transition: border-color .15s, box-shadow .15s;
+}
+/* Efectul de hover doar pe dispozitive cu mouse (pe telefon rămâne „lipit” după atingere) */
+@media (hover: hover) {
+  .card:hover { border-color: var(--rosu); box-shadow: 0 6px 22px rgba(0, 0, 0, .07); }
+}
+
+.card__eticheta {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  padding: .2rem .7rem;
+  border: 1px solid var(--rosu);
+  border-radius: 99px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rosu-inchis);
+}
+.card h3 { font-size: 1.45rem; }
+.card p { margin: 0; color: var(--text-slab); }
+
+/* Locul pentru imagini viitoare (se activează când avem fotografii) */
+.card__imagine {
+  aspect-ratio: 16 / 10;
+  margin: -1.7rem -1.7rem 1.4rem;
+  object-fit: cover;
+  width: calc(100% + 3.4rem);
+  max-width: none;
+  border-radius: var(--raza) var(--raza) 0 0;
+}
+
+/* ---------- Ediția 2026 ---------- */
+.program {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border-top: 2px solid var(--negru);
+}
+.program li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--linie);
+  align-items: start;
+}
+.program__data {
+  font-family: var(--font-titlu);
+  line-height: 1;
+  color: var(--rosu-inchis);
+}
+.program__data strong { display: block; font-size: 2.6rem; font-weight: 600; }
+.program__data span {
+  display: block;
+  margin-top: .3rem;
+  font-family: var(--font-corp);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.program h3 { font-size: 1.45rem; margin-bottom: .3rem; }
+.program p { margin: 0; color: var(--text-slab); }
+.program__detalii { font-size: .98rem; }
+.program__detalii b { color: var(--negru); font-weight: 600; }
+
+.nota-editie {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.nota-editie p { margin: 0; color: var(--text-slab); max-width: 60ch; }
+
+/* ---------- Organizatori și parteneri ---------- */
+.organizatori {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+.organizatori li {
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--linie);
+  border-left: 4px solid var(--rosu);
+  border-radius: var(--raza);
+  font-family: var(--font-titlu);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--negru);
+  background: var(--alb);
+}
+.organizatori small {
+  display: block;
+  margin-bottom: .3rem;
+  font-family: var(--font-corp);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-slab);
+}
+
+.parteneri-lista { color: var(--text-slab); max-width: 80ch; }
+.parteneri-lista strong { color: var(--negru); }
+
+/* ---------- Contact ---------- */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.date-contact { margin: 0; }
+.date-contact div { padding: 1rem 0; border-bottom: 1px solid var(--linie); }
+.date-contact div:first-child { border-top: 1px solid var(--linie); }
+.date-contact dt {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-slab);
+}
+.date-contact dd { margin: .2rem 0 0; font-size: 1.15rem; color: var(--negru); }
+
+/* ---------- Pagini interioare ---------- */
+.pagina-cap {
+  padding-block: 3.2rem 2.4rem;
+  border-bottom: 1px solid var(--linie);
+}
+.pagina-cap h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: .04em;
+  font-weight: 500;
+  margin-bottom: .3em;
+}
+.pagina-cap .intro-sectiune { margin: 0; }
+
+.migala {
+  margin: 0 0 1rem;
+  font-size: .92rem;
+  color: var(--text-slab);
+}
+
+.subtitlu {
+  font-size: 1.5rem;
+  margin: 3rem 0 1rem;
+}
+.subtitlu:first-child { margin-top: 0; }
+
+.lista-mare {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  columns: 2;
+  column-gap: 3rem;
+}
+.lista-mare li {
+  position: relative;
+  break-inside: avoid;
+  padding: .55rem 0 .55rem 1.6rem;
+  border-bottom: 1px solid var(--linie);
+}
+.lista-mare li::before {
+  content: "";
+  position: absolute;
+  left: .2rem; top: 1.1rem;
+  width: .5rem; height: .5rem;
+  background: var(--rosu);
+  transform: rotate(45deg);
+}
+
+.program .program__extra { margin-top: .7rem; font-size: 1rem; }
+.program .program__extra b { color: var(--negru); font-weight: 600; }
+
+.casuta {
+  margin-top: 2.5rem;
+  padding: 1.4rem 1.6rem;
+  border-left: 4px solid var(--rosu);
+  background: var(--fond-cald);
+}
+.casuta p { margin: 0; }
+.casuta p + p { margin-top: .7rem; }
+
+@media (max-width: 620px) {
+  .lista-mare { columns: 1; }
+}
+
+/* ---------- Subsol ---------- */
+.subsol {
+  background: var(--negru);
+  color: #d8d8d8;
+  font-size: .95rem;
+}
+.subsol .banda-cortina { height: 6px; }
+.subsol__interior {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  padding-block: 3rem 2rem;
+}
+.subsol h2 {
+  font-family: var(--font-titlu);
+  color: var(--alb);
+  font-size: 1.5rem;
+  letter-spacing: .12em;
+  margin-bottom: .4rem;
+}
+.subsol p { margin: 0 0 .8rem; }
+.subsol a { color: var(--alb); }
+.subsol a:hover { color: #ffb3b6; }
+.subsol__nav { list-style: none; margin: 0; padding: 0; columns: 2; }
+.subsol__nav li { margin-bottom: .5rem; }
+.subsol__mentiune {
+  border-top: 1px solid #333;
+  padding-block: 1.3rem 2rem;
+  font-size: .85rem;
+  color: #a8a8a8;
+}
+.subsol__mentiune p { margin: 0; max-width: 100ch; }
+
+/* ---------- Ecrane medii și mici ---------- */
+@media (max-width: 980px) {
+  .hero__grila, .despre__grila, .contact { grid-template-columns: 1fr; gap: 2.2rem; }
+  .hero__vizual { display: none; }   /* pe ecrane înguste nu rezervăm spațiu gol */
+  .carduri { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .diferit { gap: 1rem; }                       /* pe tabletă rămân 3 coloane */
+  .diferit article { padding: 1.3rem; }
+  .diferit h3 { font-size: 1.2rem; }
+  .cifre { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cifre li:nth-child(2) { border-right: 0; }
+  .cifre li:nth-child(-n+2) { border-bottom: 1px solid var(--linie); }
+  .subsol__interior { grid-template-columns: 1fr; }
+}
+
+/* ---------- Telefon ---------- */
+@media (max-width: 620px) {
+  body { font-size: 1.05rem; }
+  .sectiune { padding-block: 3.2rem; }
+  .hero { padding-block: 2.2rem 3rem; }
+  .antet__interior { min-height: 4rem; }
+  .logo img { height: 2.2rem; }
+
+  /* Butoanele din hero și din note: pe toată lățimea, ușor de atins */
+  .hero__butoane { flex-direction: column; }
+  .hero__butoane .buton,
+  .nota-editie .buton { display: block; width: 100%; text-align: center; padding-block: 1rem; }
+
+  .cifre li { padding: 1.2rem .6rem; }
+  .cifre strong { font-size: 1.5rem; }
+  .cifre span { font-size: .9rem; }
+
+  .citat { font-size: 1.25rem; padding: 1.1rem 1.2rem; }
+  .casuta { padding: 1.1rem 1.2rem; }
+  .pagina-cap { padding-block: 2rem 1.6rem; }
+
+  .program li { grid-template-columns: 1fr; gap: .6rem; }
+  .program__data strong { display: inline; font-size: 2rem; margin-right: .5rem; }
+  .program__data span { display: inline; }
+  .subsol__nav { columns: 1; }
+
+  /* ----- Carusel orizontal: „Ce îl face diferit” și „Componentele festivalului” -----
+     Pe telefon cardurile stau pe un singur rând, care se derulează cu degetul.
+     Fiecare card „se așază” (snap) la marginea din stânga; următorul se vede parțial,
+     ca să fie clar că se poate glisa. */
+  .carusel {
+    margin: 2rem -1.25rem 0;              /* iese din chenarul paginii, până la marginea ecranului */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.25rem;
+    overscroll-behavior-x: contain;       /* nu „trage” pagina în lateral când ajungi la capăt */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .carusel::-webkit-scrollbar { display: none; }
+
+  .carusel > .diferit,
+  .carusel > .carduri {
+    position: relative;
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    margin: 0;
+    padding: .25rem 1.25rem .6rem;
+  }
+  .carusel > .diferit > article,
+  .carusel > .carduri > li {
+    flex: 0 0 min(82vw, 19rem);
+    scroll-snap-align: start;
+  }
+  .carusel > .carduri > li { display: flex; }
+  .carusel .card { height: auto; flex: 1 1 auto; }
+
+  .carusel + .carusel__controale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: .6rem;
+  }
+}
+
+/* Comenzile carusel-ului (adăugate de js/site.js) sunt ascunse în afara modului telefon */
+.carusel__controale { display: none; }
+
+.carusel__buton {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 2px solid var(--rosu);
+  border-radius: 50%;
+  background: var(--alb);
+  color: var(--rosu-inchis);
+  cursor: pointer;
+}
+.carusel__buton svg { width: 22px; height: 22px; }
+.carusel__buton:disabled { opacity: .35; border-color: var(--linie); color: var(--text-slab); cursor: default; }
+.carusel__contor {
+  min-width: 4.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--negru);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Buton „Înapoi sus” (adăugat de js/site.js, doar pe telefon și tabletă) ---------- */
+.sus {
+  display: none;
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--rosu);
+  color: var(--alb);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .28);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, visibility .2s;
+}
+.sus svg { width: 22px; height: 22px; }
+@media (max-width: 980px) {
+  .sus { display: grid; }
+  .sus.vizibil { opacity: 1; visibility: visible; }
+}
+
+/* ---------- Zone de atingere în subsol ---------- */
+.subsol__nav li { margin-bottom: 0; }
+.subsol__nav a { display: block; padding: .65rem 0; }   /* tot rândul se poate atinge */
+.subsol p a { display: inline-block; padding: .65rem .3rem; }
+
+/* ---------- Telefon în orientare orizontală (ecran puțin înalt) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .antet { position: static; }          /* antetul nu mai ocupă din ecranul scurt */
+  html { scroll-padding-top: 1rem; }
+  .sus { bottom: 1rem; }
+}
+
+/* Respectă preferința de mișcare redusă */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
