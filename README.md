@@ -22,7 +22,7 @@ Caută în cod comentariile care încep cu `ACTUALIZARE`: marchează fiecare loc
 
 Listă de verificare:
 
-- [ ] **Date de contact reale.** Caută `exemplu.ro`, `XXX` și `Exemplu` în toate fișierele și înlocuiește-le (e-mail, telefon, adresă). Apar în `contact.html`, în secțiunea Contact din `index.html` și în subsolul fiecărei pagini.
+- [ ] **Date de contact.** E-mailul (`festival.miraje@gmail.com`) și adresa (Calea Dorobanților nr. 31) apar în `contact.html`, în secțiunea Contact din `index.html` și (doar e-mailul) în subsolul fiecărei pagini. Dacă se schimbă, caută-le în toate fișierele.
 - [ ] **Ediție nouă.** În `editii.html` mută programul vechi în secțiunea „Arhivă” (un rezumat scurt, într-un `<li>`) și pune programul noii ediții. În `index.html` actualizează secțiunea `#editia-2026` (titlu, date, listă) și textul din meniu („Ediția 2026”) dacă anul se schimbă.
 - [ ] **Parteneri și sponsori.** Actualizează listele din `parteneri.html`.
 - [ ] **Mențiunea din subsol** (înscrierea în Calendarul MEC) se schimbă anual: actualizeaz-o în toate cele 4 pagini.
@@ -32,7 +32,7 @@ Listă de verificare:
 
 - **Carusel orizontal.** Pe telefon (ecran până la 620 px), secțiunile „Ce îl face diferit” și „Componentele festivalului” afișează cardurile pe un singur rând care se derulează cu degetul, cu butoane „înainte/înapoi” și contor („2 din 6”). Pe tabletă și desktop rămân ca o grilă obișnuită. Ca să adaugi sau să ștergi un card, copiază sau șterge direct un `<li>` (componente) sau un `<article>` (ce îl face diferit): caruselul se adaptează singur la numărul de carduri.
 - **Reguli aplicate:** zone de atingere de cel puțin 44 px, text de minimum 16 px, meniu restrâns sub 860 px, buton „Înapoi sus” pe ecrane mici, antet care nu mai e „lipit” sus când telefonul e ținut pe orizontală.
-- **Numărul de telefon.** Când pui numărul real în `contact.html`, folosește o legătură `tel:` (exemplu în comentariul din fișier), ca să se poată apela cu o atingere.
+- **Număr de telefon.** Site-ul nu afișează deocamdată unul. Dacă se adaugă, folosește o legătură `tel:` (de exemplu `<a href="tel:+40264000000">+40 264 000 000</a>`, fără spații în `href`), ca să se poată apela cu o atingere de pe telefon.
 
 ## Publicare pe GitHub Pages
 
